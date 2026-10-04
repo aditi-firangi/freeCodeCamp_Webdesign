@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Application Form</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <h1 id="title">Application Form</h1>
+        <p id="description">Please fill out the details below:</p>
+        <form id="survey-form" method="post">
+            <fieldset>
+                <label for="name" id="name-label"
+                    >Enter Your Name: <input id="name" placeholder="Enter your name" name="name" type="text" required
+                /></label>
+                <label id="email-label" for="email"
+                    >Enter Your Email:
+                    <input id="email" placeholder="Enter your email" name="email" type="email" required
+                /></label>
+                <label id="number-label" for="number"
+                    >Age (years):
+                    <input id="number" placeholder="Enter your age" type="number" name="number" min="13" max="120"
+                /></label>
+
+                <label for="dropdown"
+                    >Hobbies
+                    <select id="dropdown" name="dropdown">
+                        <option value="">(select one)</option>
+                        <option value="1">Painting</option>
+                        <option value="2">Dancing</option>
+                        <option value="3">Coding</option>
+                        <option value="4">Other</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Reason for registration:</legend>
+                <label for="personal-reason"
+                    ><input id="personal-reason" type="radio" name="reason" value="personal" class="inline" checked />
+                    Personal</label
+                >
+                <label for="business-reason"
+                    ><input id="business-reason" type="radio" name="reason" value="business" class="inline" />
+                    Business</label
+                >
+            </fieldset>
+            <fieldset>
+                <label>Select your field of interest:</label>
+                <label for="technology"
+                    ><input value="1" type="checkbox" required name="technology" class="inline" />
+                    Technology
+                </label>
+                <label for="science"
+                    ><input value="2" type="checkbox" required name="science" class="inline" />
+                    Science
+                </label>
+                <label for="maths"
+                    ><input value="3" type="checkbox" required name="maths" class="inline" />
+                    Maths
+                </label>
+                <br />
+                <label for="comments"
+                    >Comments (optional):
+                    <textarea
+                        id="comments"
+                        name="comments"
+                        rows="3"
+                        cols="30"
+                        placeholder="Please add your comments here."
+                    ></textarea>
+                </label>
+            </fieldset>
+            <input id="submit" type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
