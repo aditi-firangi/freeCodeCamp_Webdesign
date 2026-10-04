@@ -1,444 +1,327 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Original Trombones</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <title>Oak & Haven Furniture</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #eee;
-      color: #000;
-    }
-
-    /* Navigation bar */
-    #header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      min-height: 75px;
-      background-color: #eee;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      z-index: 1000;
-      padding: 10px 30px;
-    }
-
-    #header-img {
-      width: 300px;
-      max-width: 100%;
-    }
-
-    #nav-bar {
-      display: flex;
-      gap: 60px;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: #000;
-      font-size: 16px;
-    }
-
-    /* Main content */
-    main {
-      max-width: 1000px;
-      margin: 100px auto 0;
-      padding: 20px;
-    }
-
-    /* Email form */
-    #hero {
-      text-align: center;
-      margin-bottom: 100px;
-    }
-
-    #hero h1 {
-      font-size: 28px;
-      margin-bottom: 25px;
-    }
-
-    #email {
-      display: block;
-      width: 300px;
-      max-width: 100%;
-      padding: 10px;
-      margin: 0 auto 15px;
-      border: 1px solid #777;
-    }
-
-    #submit,
-    .select-btn {
-      border: none;
-      background-color: #f1c40f;
-      font-weight: bold;
-      cursor: pointer;
-      text-transform: uppercase;
-    }
-
-    #submit {
-      padding: 10px 25px;
-      font-size: 16px;
-    }
-
-    #submit:hover,
-    .select-btn:hover {
-      background-color: orange;
-    }
-
-    /* Features section */
-    .feature {
-      display: flex;
-      align-items: center;
-      margin-bottom: 50px;
-      gap: 50px;
-    }
-
-    .icon {
-      width: 100px;
-      text-align: center;
-      color: darkorange;
-      font-size: 35px;
-    }
-
-    .description {
-      flex: 1;
-    }
-
-    .description h2 {
-      margin-bottom: 8px;
-      font-size: 24px;
-    }
-
-    .description p {
-      line-height: 1.5;
-    }
-
-    /* Video */
-    #how-it-works {
-      text-align: center;
-      margin: 70px auto;
-    }
-
-    #video {
-      width: 100%;
-      max-width: 560px;
-      height: 315px;
-      border: none;
-    }
-
-    /* Pricing cards */
-    #pricing {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-
-    .product {
-      border: 1px solid #000;
-      width: calc(100% / 3);
-      text-align: center;
-      border-radius: 3px;
-      overflow: hidden;
-    }
-
-    .product h3 {
-      background-color: #ddd;
-      padding: 15px 5px;
-      font-size: 17px;
-      text-transform: uppercase;
-    }
-
-    .product h2 {
-      margin: 15px 0;
-    }
-
-    .product ul {
-      list-style: none;
-      line-height: 2;
-      margin: 20px 0;
-    }
-
-    .select-btn {
-      padding: 12px 25px;
-      margin: 10px 0 20px;
-      font-size: 16px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #ddd;
-      padding: 20px;
-      text-align: right;
-    }
-
-    footer ul {
-      display: flex;
-      justify-content: flex-end;
-      gap: 25px;
-      list-style: none;
-      margin-bottom: 10px;
-    }
-
-    footer a {
-      color: #000;
-      text-decoration: none;
-    }
-
-    footer span {
-      font-size: 14px;
-      color: #444;
-    }
-
-    /* Responsive design */
-    @media (max-width: 700px) {
-      #header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-      }
-
-      #header-img {
-        width: 250px;
-      }
-
-      #nav-bar {
-        gap: 20px;
-      }
-
-      main {
-        margin-top: 140px;
-      }
-
-      #hero h1 {
-        font-size: 22px;
-      }
-
-      .feature {
-        gap: 15px;
-      }
-
-      .icon {
-        width: 50px;
-        font-size: 25px;
-      }
-
-      .description h2 {
-        font-size: 20px;
-      }
-
-      #pricing {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .product {
-        width: 100%;
-        max-width: 350px;
-      }
-    }
-
-    @media (max-width: 400px) {
-      #nav-bar {
-        gap: 12px;
-      }
-
-      .nav-link {
-        font-size: 14px;
-      }
-
-      .feature {
-        align-items: flex-start;
-      }
-
-      .icon {
-        display: none;
-      }
-
-      #video {
-        height: 220px;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- Header and navigation -->
-  <header id="header">
+    <!-- HEADER -->
+    <header id="header">
 
-    <img
-      id="header-img"
-      src="https://cdn.freecodecamp.org/testable-projects-fcc/images/product-landing-page-logo.png"
-      alt="Original Trombones logo"
-    >
+        <a href="#hero" class="brand">
+            <img
+                id="header-img"
+                src="https://cdn-icons-png.flaticon.com/512/2553/2553634.png"
+                alt="Oak and Haven logo"
+            >
+            <span>Oak & Haven</span>
+        </a>
 
-    <nav id="nav-bar">
-      <a class="nav-link" href="#features">Features</a>
-      <a class="nav-link" href="#how-it-works">How It Works</a>
-      <a class="nav-link" href="#pricing">Pricing</a>
-    </nav>
+        <nav id="nav-bar">
 
-  </header>
+            <a class="nav-link" href="#collection">
+                Collection
+            </a>
 
-  <main>
+            <a class="nav-link" href="#craftsmanship">
+                Craftsmanship
+            </a>
 
-    <!-- Email subscription -->
-    <section id="hero">
+            <a class="nav-link" href="#story">
+                Our Story
+            </a>
 
-      <h1>Handcrafted, home-made masterpieces</h1>
+            <a class="nav-link" href="#contact">
+                Contact
+            </a>
 
-      <form
-        id="form"
-        action="https://www.freecodecamp.com/email-submit"
-        method="get"
-      >
-        <input
-          id="email"
-          type="email"
-          name="email"
-          placeholder="Enter your email address"
-          required
-        >
+        </nav>
 
-        <input
-          id="submit"
-          type="submit"
-          value="Get Started"
-        >
-      </form>
+    </header>
 
-    </section>
 
-    <!-- Features -->
-    <section id="features">
+    <main>
 
-      <div class="feature">
-        <div class="icon" aria-hidden="true">🔥</div>
+        <!-- HERO SECTION -->
+        <section id="hero">
 
-        <div class="description">
-          <h2>Premium Materials</h2>
-          <p>
-            Our trombones use the shiniest brass which is sourced locally.
-            This will increase the longevity of your purchase.
-          </p>
-        </div>
-      </div>
+            <div class="hero-content">
 
-      <div class="feature">
-        <div class="icon" aria-hidden="true">🚚</div>
+                <p class="eyebrow">
+                    TIMELESS FURNITURE
+                </p>
 
-        <div class="description">
-          <h2>Fast Shipping</h2>
-          <p>
-            We make sure you receive your trombone as soon as we have
-            finished making it. We also provide free returns if you are
-            not satisfied.
-          </p>
-        </div>
-      </div>
+                <h1>
+                    Furniture made for
+                    <span>living beautifully.</span>
+                </h1>
 
-      <div class="feature">
-        <div class="icon" aria-hidden="true">✓</div>
+                <p class="hero-text">
+                    Thoughtfully designed furniture crafted from natural
+                    materials and built to become part of your home for
+                    years to come.
+                </p>
 
-        <div class="description">
-          <h2>Quality Assurance</h2>
-          <p>
-            For every purchase you make, we will ensure there are no
-            damages or faults and we will check and test the pitch of
-            your instrument.
-          </p>
-        </div>
-      </div>
+                <a href="#collection" class="button">
+                    Explore Collection
+                </a>
 
-    </section>
+            </div>
 
-    <!-- Embedded video -->
-    <section id="how-it-works">
+        </section>
 
-      <iframe
-        id="video"
-        src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc"
-        title="How our trombones are made"
-        allowfullscreen
-      ></iframe>
 
-    </section>
+        <!-- COLLECTION -->
+        <section id="collection" class="section">
 
-    <!-- Pricing -->
-    <section id="pricing">
+            <p class="section-label">
+                OUR COLLECTION
+            </p>
 
-      <div class="product">
-        <h3>Tenor Trombone</h3>
+            <h2>
+                Pieces with purpose
+            </h2>
 
-        <h2>$600</h2>
+            <p class="section-intro">
+                Simple forms, honest materials, and comfortable designs
+                created for everyday living.
+            </p>
 
-        <ul>
-          <li>Lorem ipsum.</li>
-          <li>Lorem ipsum.</li>
-          <li>Lorem ipsum dolor.</li>
-          <li>Lorem ipsum.</li>
-        </ul>
 
-        <button class="select-btn">Select</button>
-      </div>
+            <div class="products">
 
-      <div class="product">
-        <h3>Bass Trombone</h3>
+                <article class="product-item">
 
-        <h2>$900</h2>
+                    <div class="product-details">
 
-        <ul>
-          <li>Lorem ipsum.</li>
-          <li>Lorem ipsum.</li>
-          <li>Lorem ipsum dolor.</li>
-          <li>Lorem ipsum.</li>
-        </ul>
+                        <p class="product-type">
+                            LOUNGE
+                        </p>
 
-        <button class="select-btn">Select</button>
-      </div>
+                        <h3>
+                            Arden Lounge Chair
+                        </h3>
 
-      <div class="product">
-        <h3>Valve Trombone</h3>
+                        <p>
+                            A sculpted oak frame paired with soft,
+                            supportive upholstery.
+                        </p>
 
-        <h2>$1200</h2>
+                        <strong>
+                            ₹28,500
+                        </strong>
 
-        <ul>
-          <li>Plays similar to a Trumpet</li>
-          <li>Great for Jazz Bands</li>
-          <li>Lorem ipsum dolor.</li>
-          <li>Lorem ipsum.</li>
-        </ul>
+                        <a href="#contact">
+                            Check out now
+                        </a>
 
-        <button class="select-btn">Select</button>
-      </div>
+                    </div>
 
-    </section>
+                </article>
 
-    <!-- Footer -->
+
+                <article class="product-item">
+
+                    <div class="product-details">
+
+                        <p class="product-type">
+                            DINING
+                        </p>
+
+                        <h3>
+                            Haven Dining Table
+                        </h3>
+
+                        <p>
+                            A solid wood dining table designed for
+                            everyday meals and memorable gatherings.
+                        </p>
+
+                        <strong>
+                            ₹64,900
+                        </strong>
+
+                        <a href="#contact">
+                            Check out now
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product-item">
+
+
+                    <div class="product-details">
+
+                        <p class="product-type">
+                            STORAGE
+                        </p>
+
+                        <h3>
+                            Noma Sideboard
+                        </h3>
+
+                        <p>
+                            Clean lines and generous storage wrapped
+                            in a warm walnut finish.
+                        </p>
+
+                        <strong>
+                            ₹42,750
+                        </strong>
+
+                        <a href="#contact">
+                            Check out now
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CRAFTSMANSHIP -->
+        <section id="craftsmanship" class="section craftsmanship">
+
+            <div class="craft-text">
+
+                <p class="section-label">
+                    CRAFTSMANSHIP
+                </p>
+
+                <h2>
+                    Made slowly.
+                    Made to last.
+                </h2>
+
+                <p>
+                    Every Oak & Haven piece begins with carefully selected
+                    timber and is finished by skilled craftspeople.
+                </p>
+
+                <p>
+                    From the first cut to the final finish, we focus on
+                    details that are often overlooked but appreciated
+                    every day.
+                </p>
+
+            </div>
+
+
+            <div class="video-wrapper">
+
+                <iframe
+                    id="video"
+                    src="https://www.youtube.com/embed/ScMzIvxBSi4"
+                    title="Furniture craftsmanship video"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </section>
+
+
+        <!-- OUR STORY -->
+        <section id="story" class="section story">
+
+            <div class="story-content">
+
+                <p class="section-label">
+                    OUR STORY
+                </p>
+
+                <h2>
+                    Designed around real life.
+                </h2>
+
+                <p>
+                    Oak & Haven was created with one simple idea:
+                    furniture should feel as good as it looks.
+                </p>
+
+                <p>
+                    Our designs combine contemporary shapes with
+                    traditional materials, creating pieces that work
+                    naturally in modern homes.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact">
+
+            <p class="section-label">
+                STAY CONNECTED
+            </p>
+
+            <h2>
+                New pieces are on the way.
+            </h2>
+
+            <p>
+                Join our mailing list for new collections, design stories,
+                and occasional offers.
+            </p>
+
+
+            <form
+                id="form"
+                action="https://www.freecodecamp.com/email-submit"
+                method="post"
+            >
+
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+                <input
+                    id="submit"
+                    type="submit"
+                    value="Subscribe"
+                >
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
     <footer>
 
-      <ul>
-        <li><a href="#privacy">Privacy</a></li>
-        <li><a href="#terms">Terms</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <div class="footer-brand">
+            Oak & Haven
+        </div>
 
-      <span>Copyright 2016, Original Trombones</span>
+        <p>
+            Crafted for the way you live.
+        </p>
+
+        <p>
+            © 2026 Oak & Haven Furniture
+        </p>
 
     </footer>
-
-  </main>
 
 </body>
 </html>
